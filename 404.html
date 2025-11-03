@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta http-equiv="Refresh" content="0; url=/bmanager-app/" />
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=/bmanager-app/" />
   </head>
   <body>
     <script>
-      // تحويل أي رابط داخلي إلى الصفحة الرئيسية
-      var path = window.location.pathname.replace('/bmanager-app', '');
-      sessionStorage.redirect = path;
-      window.location.href = '/bmanager-app/';
+      // 🔁 عند محاولة فتح رابط فرعي (مثل /reports أو /dashboard)
+      // GitHub Pages لا يعرف هذه المسارات، لذا نعيد المستخدم إلى الصفحة الأساسية.
+      const base = '/bmanager-app';
+      const current = window.location.pathname;
+
+      if (!current.startsWith(base)) {
+        window.location.href = base + '/';
+      } else {
+        const subPath = current.replace(base, '');
+        sessionStorage.redirect = subPath;
+        window.location.href = base + '/';
+      }
     </script>
   </body>
 </html>
