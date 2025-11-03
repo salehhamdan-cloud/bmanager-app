@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B.Manager App</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/icon-192-D9zu5Qfw.png" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- ✅ PWA configuration -->
+  <link rel="manifest" href="/assets/manifest-pW_vzyUG.json" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="B.Manager" />
+  <link rel="apple-touch-icon" href="/assets/icon-192-D9zu5Qfw.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="/assets/icon-512-B4EW7xbr.png" />
+
+  <meta http-equiv="Cache-Control" content="public, max-age=604800, immutable" />
+
+  <style>
+    body {
+      font-family: 'Heebo', sans-serif;
+      background-color: #f8fafc;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #64748b;
+    }
+
+    /* Animations */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      80% { opacity: 1; transform: scale(1.05); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+
+  <!-- Import Map (only if using CDN version) -->
+
+
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://aistudiocdn.com/react@19.1.1",
+      "react-dom": "https://aistudiocdn.com/react-dom@19.1.1",
+      "react-router-dom": "https://aistudiocdn.com/react-router-dom@7.8.2"
+    }
+  }
+  </script>
+  <script type="module" crossorigin src="/assets/index-BU7E-q7q.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-zUQvTEH7.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 overflow-x-hidden">
+  <div id="root"></div>
+
+  <!-- App entry -->
+
+  <!-- ✅ Register Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker
+          .register('/service-worker.js')
+          .then(() => console.log('✅ Service Worker registered successfully'))
+          .catch(err => console.error('❌ Service Worker registration failed:', err));
+      });
+    }
+  </script>
+</body>
+</html>
