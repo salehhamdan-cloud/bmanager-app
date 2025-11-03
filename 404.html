@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Refresh" content="0; url=/bmanager-app/" />
+  </head>
+  <body>
+    <script>
+      // تحويل أي رابط داخلي إلى الصفحة الرئيسية
+      var path = window.location.pathname.replace('/bmanager-app', '');
+      sessionStorage.redirect = path;
+      window.location.href = '/bmanager-app/';
+    </script>
+  </body>
+</html>
